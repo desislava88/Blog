@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using System.Data.Entity;
 
 namespace Blog.Controllers
 {
@@ -18,9 +19,30 @@ namespace Blog.Controllers
             return View();
         }
 
-        public ActionResult ViewPost()
+        public ActionResult ViewPost(int id)
         {
-            return View();
+            var model = new PostViewModel();
+
+            using (var dbContext = new BlogDbContext())
+            {
+                Post currentPost =
+                    dbContext.Posts.Where(p => p.PostId == id).FirstOrDefault();
+
+                //update the selected post
+                currentPost.Counter = currentPost.Counter + 1;
+                //tell the db that there are updates
+                dbContext.Entry(currentPost).State = EntityState.Modified;
+                //save changs to the database
+                dbContext.SaveChanges();
+
+                model.PostTitle = currentPost.PostTitle;
+                model.DatePost = currentPost.DatePost;
+                model.PostContent = currentPost.PostContent;
+                model.Counter = currentPost.Counter;
+
+            }
+
+            return View(model);
         }
 
         public ActionResult ListPosts()

@@ -1,7 +1,12 @@
-﻿
+﻿@model Blog.Models.PostViewModel
 @{
     ViewBag.Title = "ViewPost";
 }
 
-<h2>ViewPost</h2>
+<h2>@Model.PostTitle</h2>
+<strong>@Model.DatePost</strong>
+<div>@Model.PostContent</div>
 
+<div>@Model.Counter</div>
+@Html.ActionLink("Back", "ListPosts", "Post")
+ 
