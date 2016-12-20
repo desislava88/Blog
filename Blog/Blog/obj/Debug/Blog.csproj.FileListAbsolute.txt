@@ -83,3 +83,4 @@ E:\DESA\SoftUni\Software TECHNOLOGIES\Exam\Blog\Blog\Blog\obj\Debug\Blog.Migrati
 E:\DESA\SoftUni\Software TECHNOLOGIES\Exam\Blog\Blog\Blog\obj\Debug\Blog.csproj.GenerateResource.Cache
 E:\DESA\SoftUni\Software TECHNOLOGIES\Exam\Blog\Blog\Blog\obj\Debug\Blog.Migrations.Comments_Add_PostedBy.resources
 E:\DESA\SoftUni\Software TECHNOLOGIES\Exam\Blog\Blog\Blog\obj\Debug\Blog.Migrations.Comments_PostedBy_IsRequred.resources
+E:\DESA\SoftUni\Software TECHNOLOGIES\Exam\Blog\Blog\Blog\obj\Debug\Blog.csprojResolveAssemblyReference.cache
