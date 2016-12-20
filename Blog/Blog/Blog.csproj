@@ -201,13 +201,14 @@
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="DAL\BlogDbContext.cs" />
     <Compile Include="DAL\Entities\ApplicationUser.cs" />
+    <Compile Include="DAL\Entities\Comment.cs" />
     <Compile Include="DAL\Entities\Post.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201612201144573_Post_Add.cs" />
-    <Compile Include="Migrations\201612201144573_Post_Add.Designer.cs">
-      <DependentUpon>201612201144573_Post_Add.cs</DependentUpon>
+    <Compile Include="Migrations\201612201918063_Fix.cs" />
+    <Compile Include="Migrations\201612201918063_Fix.Designer.cs">
+      <DependentUpon>201612201918063_Fix.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -293,8 +294,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612201144573_Post_Add.resx">
-      <DependentUpon>201612201144573_Post_Add.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612201918063_Fix.resx">
+      <DependentUpon>201612201918063_Fix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

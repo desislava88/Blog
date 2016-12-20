@@ -30,5 +30,7 @@ namespace Blog.DAL.Entities
         public string UserId { get; set; }
 
         public virtual ApplicationUser ApplicationUser { get; set; }
+
+        public ICollection<Comment> Comments { get; set; }
     }
 }
