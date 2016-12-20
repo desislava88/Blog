@@ -31,7 +31,7 @@ namespace Blog.Controllers
                     commentModel.CommentContent = comment.CommentContent;
                     commentModel.DateComment = comment.DateComment;
                     commentModel.PostId = comment.PostId;
-                    commentModel.UserId = comment.UserId;
+                    commentModel.PostedBy = comment.PostedBy;
 
                     commentViewModel.Add(commentModel);
                 }
@@ -59,7 +59,7 @@ namespace Blog.Controllers
                 newComment.CommentContent = commentContent;
                 newComment.DateComment = DateTime.Now;
                 newComment.PostId = postId;
-                newComment.UserId = User.Identity.GetUserId();
+                newComment.PostedBy = User.Identity.Name;
 
                 //adding this entity to Posts entity
                 dbContext.Comments.Add(newComment);

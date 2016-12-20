@@ -13,10 +13,7 @@ namespace Blog.DAL.Entities
         public int CommentId { get; set; }
 
         [Required]
-        [ForeignKey("ApplicationUser")]
-        public string UserId { get; set; }
-
-        public virtual ApplicationUser ApplicationUser { get; set; }
+        public string PostedBy { get; set; }
 
         [ForeignKey("Post")]
         public int PostId { get; set; }

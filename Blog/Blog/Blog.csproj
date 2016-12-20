@@ -211,6 +211,14 @@
     <Compile Include="Migrations\201612201918063_Fix.Designer.cs">
       <DependentUpon>201612201918063_Fix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612202212347_Comments_Add_PostedBy.cs" />
+    <Compile Include="Migrations\201612202212347_Comments_Add_PostedBy.Designer.cs">
+      <DependentUpon>201612202212347_Comments_Add_PostedBy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612202217331_Comments_PostedBy_IsRequred.cs" />
+    <Compile Include="Migrations\201612202217331_Comments_PostedBy_IsRequred.Designer.cs">
+      <DependentUpon>201612202217331_Comments_PostedBy_IsRequred.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CommentViewModel.cs" />
@@ -300,6 +308,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201612201918063_Fix.resx">
       <DependentUpon>201612201918063_Fix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612202212347_Comments_Add_PostedBy.resx">
+      <DependentUpon>201612202212347_Comments_Add_PostedBy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612202217331_Comments_PostedBy_IsRequred.resx">
+      <DependentUpon>201612202217331_Comments_PostedBy_IsRequred.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

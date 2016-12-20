@@ -17,6 +17,8 @@ namespace Blog.Models
         [Required]
         public int PostId { get; set; }
 
+        public string PostedBy { get; set; }
+
         [Required]
         public string CommentContent { get; set; }
 

@@ -3,20 +3,24 @@
     ViewBag.Title = "CreatePost";
 }
 
-<h2>Create Post</h2>
-@using (Html.BeginForm("SubmitPost", "Post", FormMethod.Post, new { @class = "form-vertical", role = "form" }))
-{
-<div class="form-group">
-    @Html.LabelFor(m => m.PostTitle)
-    @Html.TextBoxFor(m => m.PostTitle, new { @class = "form-control" })
-</div>
+<div class="row">
+    <h2>Create Post</h2>
+    @using (Html.BeginForm("SubmitPost", "Post", FormMethod.Post, new { @class = "form-vertical", role = "form" }))
+    {
 
-<div class="form-group">
-    @Html.LabelFor(m => m.PostContent)
-    @Html.TextAreaFor(m => m.PostContent, new { @class = "form-control", rows = 10 })
-</div>
+        <div class="form-group col-md-8">
+            @Html.LabelFor(m => m.PostTitle)
+            @Html.TextBoxFor(m => m.PostTitle, new { @class = "form-control", style = "min-width: 100%" })
+        </div>
 
-<div>
-    <input type="submit" name="Create"/>
+        <div class="form-group col-md-8">
+            @Html.LabelFor(m => m.PostContent)
+            @Html.TextAreaFor(m => m.PostContent, new { @class = "form-control", rows = 15, style = "min-width: 100%" })
+        </div>
+
+        <div class="col-md-8">
+            <input type="submit" class="btn btn-primary" name="Create" />
+        </div>
+
+    }
 </div>
-}

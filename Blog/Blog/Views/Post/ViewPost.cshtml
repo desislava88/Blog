@@ -4,11 +4,18 @@
 }
 
 <h2>@Model.PostTitle</h2>
-<strong>@Model.DatePost</strong>
-<div>@Model.PostContent</div>
 
-<div>@Model.Counter</div>
+<strong>@Model.DatePost</strong>
+
 <div>
+    <p>@Model.PostContent</p>
+</div>
+
+<div class="text-right"><small>Views:</small> <strong>@Model.Counter</strong></div>
+<hr />
+
+<div class="row">
+    <h4>Comments</h4>
     @Html.Action("ShowAll", "Comments", @Model)
 </div>
 
