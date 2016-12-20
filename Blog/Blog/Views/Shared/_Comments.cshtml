@@ -1,30 +1,43 @@
-﻿@model Blog.Models.CommentViewModel
+﻿@model List<Blog.Models.CommentViewModel>
 
-@Html.HiddenFor(m => Model.PostId); 
+<div class="panel panel-default">
+    <div class="panel-body">
+        <textarea id="commentContent" rows="5" class="form-control" style="min-width: 100%"></textarea>
+    </div>
 
-<div class="row">
-    @Model.CommentContent
-    @Model.DateComment
-    @Model.UserId
+    <div class="panel-footer">
+        <a class="btn btn-info" role="button" onclick="insertComment()">Post Comment</a>
+    </div>
 </div>
 
-<div class="row">
-    <textarea id="commentContent" rows="4" cols="50"></textarea>
-</div>
+@Html.HiddenFor(m => @Model[0].PostId);
 
-<div class="row">
-    <a class="btn btn-info" role="button" onclick="insertComment()">Post Comment</a>
-</div>
+@for (int i = 0; i < @Model.Count; i++)
+{
+   if (Model[i].CommentContent != null)
+    {
+    <div class="row">
+        <small>Posted by:</small> <strong>@Model[i].UserId</strong>, <small>Posted on:</small> @Model[i].DateComment
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p>@Model[i].CommentContent</p>
+            </div>
+        </div>
+    </div>
+    }
+}
 
 <script>
     function insertComment() {
-       
+        var postId = $('[name="[0].PostId"]').val();
+        var commentContent = $("#commentContent").val();
+        debugger;
         $.ajax({
             url: '@Url.Action( "InsertComment", "Comments")',
-            data: { commentContent: $("#commentContent").val(), postId: $("#PostId").val()  },
+            data: { commentContent: commentContent, postId: postId },
             method: 'POST'
         }).success(function (response) {
             location.reload();
-       });
+        });
     }
 </script>

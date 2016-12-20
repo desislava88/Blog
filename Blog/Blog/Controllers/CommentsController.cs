@@ -16,9 +16,34 @@ namespace Blog.Controllers
         // GET: Comments
        public ActionResult ShowAll(PostViewModel postModel)
         {
-            var commentViewModel = new CommentViewModel();
+            var commentViewModel = new List<CommentViewModel>();
 
-            commentViewModel.CommentContent = "bhhbfhdbfhdbfhd"; 
+            using (var dbContext = new BlogDbContext())
+            {
+
+                List<Comment> postComment = dbContext.Comments.Where(p=>p.PostId == postModel.PostId)
+                    .OrderByDescending(c=>c.DateComment).ToList();
+
+                foreach (var comment in postComment)
+                {
+                    var commentModel = new CommentViewModel();
+
+                    commentModel.CommentContent = comment.CommentContent;
+                    commentModel.DateComment = comment.DateComment;
+                    commentModel.PostId = comment.PostId;
+                    commentModel.UserId = comment.UserId;
+
+                    commentViewModel.Add(commentModel);
+                }
+
+                //if there is no comments, get the post id and return it in a empty comment
+                if(commentViewModel.Count == 0)
+                {
+                    var commentModel = new CommentViewModel();
+                    commentModel.PostId = postModel.PostId;
+                    commentViewModel.Add(commentModel);
+                }
+            }
 
             return PartialView("_Comments", commentViewModel);
         }
