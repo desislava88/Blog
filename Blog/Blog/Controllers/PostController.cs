@@ -13,7 +13,7 @@ namespace Blog.Controllers
 {
     public class PostController : Controller
     {
-        
+        [Authorize]
         public ActionResult CreatePost()
         {
             return View();
@@ -52,7 +52,8 @@ namespace Blog.Controllers
             using (var dbContext = new BlogDbContext())
             {
                 //getting list with all post rows
-                List<Post> blogPosts = dbContext.Posts.Select(row => row).ToList();
+                List<Post> blogPosts = dbContext.Posts.Select(row => row)
+                    .OrderByDescending(p=> p.DatePost).ToList();
 
                 //filling all the post rows into the view model
                 foreach (Post post in blogPosts)
@@ -102,7 +103,7 @@ namespace Blog.Controllers
                 int newPostId = newPost.PostId;
 
                 //go to the list view
-                return RedirectToAction("ViewPost");
+                return RedirectToAction("ViewPost", new { id = newPostId });
             }
         }
 
