@@ -1,0 +1,30 @@
+﻿@model Blog.Models.CommentViewModel
+
+@Html.HiddenFor(m => Model.PostId); 
+
+<div class="row">
+    @Model.CommentContent
+    @Model.DateComment
+    @Model.UserId
+</div>
+
+<div class="row">
+    <textarea id="commentContent" rows="4" cols="50"></textarea>
+</div>
+
+<div class="row">
+    <a class="btn btn-info" role="button" onclick="insertComment()">Post Comment</a>
+</div>
+
+<script>
+    function insertComment() {
+       
+        $.ajax({
+            url: '@Url.Action( "InsertComment", "Comments")',
+            data: { commentContent: $("#commentContent").val(), postId: $("#PostId").val()  },
+            method: 'POST'
+        }).success(function (response) {
+            location.reload();
+       });
+    }
+</script>

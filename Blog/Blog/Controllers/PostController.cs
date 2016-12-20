@@ -35,6 +35,7 @@ namespace Blog.Controllers
                 //save changs to the database
                 dbContext.SaveChanges();
 
+                model.PostId = currentPost.PostId;
                 model.PostTitle = currentPost.PostTitle;
                 model.DatePost = currentPost.DatePost;
                 model.PostContent = currentPost.PostContent;

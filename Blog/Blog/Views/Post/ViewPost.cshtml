@@ -8,5 +8,9 @@
 <div>@Model.PostContent</div>
 
 <div>@Model.Counter</div>
+<div>
+    @Html.Action("ShowAll", "Comments", @Model)
+</div>
+
 @Html.ActionLink("Back", "ListPosts", "Post")
  
