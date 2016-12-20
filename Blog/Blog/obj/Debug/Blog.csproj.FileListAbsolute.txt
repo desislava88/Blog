@@ -77,8 +77,8 @@ E:\DESA\SoftUni\Software TECHNOLOGIES\Exam\Blog\Blog\Blog\bin\Microsoft.Owin.Sec
 E:\DESA\SoftUni\Software TECHNOLOGIES\Exam\Blog\Blog\Blog\bin\Microsoft.Owin.Security.Google.xml
 E:\DESA\SoftUni\Software TECHNOLOGIES\Exam\Blog\Blog\Blog\bin\Microsoft.Owin.Security.Twitter.xml
 E:\DESA\SoftUni\Software TECHNOLOGIES\Exam\Blog\Blog\Blog\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-E:\DESA\SoftUni\Software TECHNOLOGIES\Exam\Blog\Blog\Blog\obj\Debug\Blog.csprojResolveAssemblyReference.cache
 E:\DESA\SoftUni\Software TECHNOLOGIES\Exam\Blog\Blog\Blog\obj\Debug\Blog.dll
 E:\DESA\SoftUni\Software TECHNOLOGIES\Exam\Blog\Blog\Blog\obj\Debug\Blog.pdb
 E:\DESA\SoftUni\Software TECHNOLOGIES\Exam\Blog\Blog\Blog\obj\Debug\Blog.Migrations.Post_Add.resources
 E:\DESA\SoftUni\Software TECHNOLOGIES\Exam\Blog\Blog\Blog\obj\Debug\Blog.csproj.GenerateResource.Cache
+E:\DESA\SoftUni\Software TECHNOLOGIES\Exam\Blog\Blog\Blog\obj\Debug\Blog.csprojResolveAssemblyReference.cache

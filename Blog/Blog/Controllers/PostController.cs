@@ -12,11 +12,6 @@ namespace Blog.Controllers
 {
     public class PostController : Controller
     {
-        // GET: Post
-        public ActionResult Index()
-        {
-            return View();
-        }
         
         public ActionResult CreatePost()
         {
@@ -28,6 +23,35 @@ namespace Blog.Controllers
             return View();
         }
 
+        public ActionResult ListPosts()
+        {
+            var model = new List<PostViewModel>();
+            //getting list with the blog posts from the database
+            using (var dbContext = new BlogDbContext())
+            {
+                //getting list with all post rows
+                List<Post> blogPosts = dbContext.Posts.Select(row => row).ToList();
+
+                //filling all the post rows into the view model
+                foreach (Post post in blogPosts)
+                {
+                    //creating empty view model object
+                    var currentPost = new PostViewModel();
+
+                    //set values to the view model object from the DB
+                    currentPost.PostContent = post.PostContent;
+                    currentPost.DatePost = post.DatePost;
+                    currentPost.PostId = post.PostId;
+                    currentPost.PostTitle = post.PostTitle;
+                    currentPost.Counter = post.Counter;
+
+                    //add the view model object to the list, which should be provided to the view
+                    model.Add(currentPost);
+                }
+            }
+
+            return View(model);
+        }
         //public ActionResult SubmitPost(PostViewModel model)
         //{
         //    return View();
@@ -52,6 +76,8 @@ namespace Blog.Controllers
 
                 //saving the the changes to the database
                 dbContext.SaveChanges();
+
+                int newPostId = newPost.PostId;
 
                 //go to the list view
                 return RedirectToAction("ViewPost");
