@@ -1,0 +1,22 @@
+﻿@model Blog.Models.PostViewModel
+@{
+    ViewBag.Title = "CreatePost";
+}
+
+<h2>Create Post</h2>
+@using (Html.BeginForm("SubmitPost", "Post", FormMethod.Post, new { @class = "form-vertical", role = "form" }))
+{
+<div class="form-group">
+    @Html.LabelFor(m => m.PostTitle)
+    @Html.TextBoxFor(m => m.PostTitle, new { @class = "form-control" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.PostContent)
+    @Html.TextAreaFor(m => m.PostContent, new { @class = "form-control", rows = 10 })
+</div>
+
+<div>
+    <input type="submit" name="Create"/>
+</div>
+}
