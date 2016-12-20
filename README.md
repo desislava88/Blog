@@ -1,5 +1,5 @@
 # Blog
-Exam project for SoftUni's course <a href=https://softuni.bg/trainings/1430/software-technologies-october-2016">Software Technologies - октомври 2016</a>  
+Exam project for SoftUni's course [Software Technologies - октомври 2016](https://softuni.bg/trainings/1430/software-technologies-october-2016)  
 
 Used Technologies:  
 * [.NET](https://www.microsoft.com/net)
